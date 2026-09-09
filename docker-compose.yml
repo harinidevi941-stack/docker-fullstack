@@ -1,0 +1,19 @@
+services:
+  backend:
+    build: ./dummy-backend
+    ports:
+      - "3000:3000"
+    networks:
+      - common-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - common-network
+
+networks:
+  common-network:

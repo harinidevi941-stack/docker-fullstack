@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multi-Container Application</title>
+</head>
+<body>
+    <h1>Multi-Container Application</h1>
+    <button onclick="getMessage()">Get Backend Message</button>
+    <p id="message"></p>
+
+    <script>
+        async function getMessage() {
+            const response = await fetch('/api');
+            const message = await response.text();
+            document.getElementById('message').innerText = message;
+        }
+    </script>
+</body>
+</html>

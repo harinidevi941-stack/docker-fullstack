@@ -1,0 +1,9 @@
+{
+  "name": "dummy-backend",
+  "version": "1.0.0",
+  "description": "Dummy backend for Docker CI/CD experiment",
+  "main": "dummy-backend.js",
+  "scripts": {
+    "start": "node dummy-backend.js"
+  }
+}
