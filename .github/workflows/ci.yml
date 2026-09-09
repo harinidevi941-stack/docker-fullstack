@@ -1,0 +1,23 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker Compose
+        run: docker compose build
+
+      - name: Start Services
+        run: docker compose up -d
+
+      - name: Verify
+        run: docker compose ps
